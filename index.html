@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="authors" content="Francesca Malloci, Flavia Murru, Fabio Carta">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>Duplicated Contracts</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!--- Library for Line Chart-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+
+  </head>
+   <script type="text/javascript">
+
+  function createChart() {
+    
+    var data = {
+
+    labels: [ "07/08/2015 20:48","07/08/2015 21:03","10/08/2015 12:41","10/08/2015 23:26",
+              "12/08/2015 14:56","12/08/2015 16:14","20/08/2015 16:40","30/08/2015 00:07",
+              "05/09/2015 08:45","08/09/2015 21:02","08/09/2015 21:29","17/09/2015 10:50",
+              "19/09/2015 13:48","19/09/2015 15:25","19/09/2015 16:54","19/09/2015 17:05",
+              "19/09/2015 18:20","21/09/2015 09:31","21/09/2015 09:48","21/09/2015 09:52",
+              "21/09/2015 09:59","21/09/2015 11:44","25/09/2015 11:40","05/10/2015 18:37",
+              "05/10/2015 18:38","05/10/2015 18:38","05/10/2015 18:39","05/10/2015 18:40",
+              "05/10/2015 18:41","05/10/2015 18:42","05/10/2015 18:43","05/10/2015 18:43",
+              "05/10/2015 18:44","05/10/2015 19:24","05/10/2015 20:33","06/10/2015 16:29",
+              "06/10/2015 16:34","09/10/2015 23:04","09/10/2015 23:07","12/10/2015 17:58",
+              "17/10/2015 16:35","23/10/2015 20:45","05/11/2015 22:54"
+            ],
+
+    datasets: [
+    {
+
+      label: "Duplicated Contracts",
+      fillColor: "rgba(220,220,220,0.2)",
+      strokeColor: "rgba(220,220,220,1)",
+      pointColor: "rgba(220,220,220,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(220,220,220,1)",
+      data: [0,1,0,0,0,0,0,0,0,1,1,2,1,1,2,1,1,0,0,0,0,0,1,1,2,4,1,2,2,2,2,4,1,1,1,1,1,0,0,0,1,0,1]
+    },
+    { 
+
+      label: "Total Contracts",
+      fillColor:"transparent",
+      strokeColor: "rgba(151,187,205,1)",
+      pointColor: "rgba(151,187,205,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(151,187,205,1)",
+      data: [1,1,1,1,1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,1,2,4,1,2,2,2,2,4,1,1,1,1,1,1,1,1,1,1,1]
+    }  
+  ]}
+    
+    var cht = document.getElementById('trChart');
+    var ctx = cht.getContext('2d');
+    var options = {
+                    responsive: true,
+                    legend: true
+                  };
+    var barChart = new Chart(ctx).Line(data,options);
+
+  }
+
+  </script>
+
+  <body onload="createChart();">
+
+    <div class="container">
+
+      <div class="header">
+         <h3 class="text-muted"><img src="favicon.png" height="50" width="50">Duplicated Contracts</h3></a>      
+      </div>
+
+      <div style="background:#F7F7F7 !important" class="jumbotron jumbotron-fluid">
+        <canvas id="trChart" ></canvas>        
+      </div>
+
+      <div class="row marketing">
+        
+        <div class="col-md-6">
+          <h4>Descrizione</h4>
+          <p>Il seguente grafico mostra al variare del tempo, il numero totale di contratti e il numero totale di contratti con codice sorgente duplicato.</p>         
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Legenda</h4>
+          <img src="img/blu.png" class="legend" > <p> <em> Total Contracts </em> </p>
+          <img src="img/gray.png" class="legend" > <p> <em> Duplicated Contracts  </em></p>
+        </div>
+
+      </div>
+
+        <div class="footer">
+          <p>&copy; Francesca Malloci, Flavia Murru, Fabio Carta</p>
+        </div>
+    </div> <!-- /container -->
+  </body>
+</html>
