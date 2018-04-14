@@ -1,4 +1,4 @@
 # DuplicatedContracts
 
 
-https://mallocifrancesca.github.io/Duplicated-Contracts/
+You can see the site at the following link https://mallocifrancesca.github.io/Duplicated-Contracts/
